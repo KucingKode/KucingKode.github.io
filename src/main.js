@@ -108,13 +108,17 @@ const app = new App({
 
     mediaLinks: [
       // [media, link]
+      ['Email', 'mailto:fazlecode@gmail.com'],
       ['Github', 'https://github.com/KucingKode'],
       ['Codepen', 'https://codepen.io/CatKode'],
       ['Codewars', 'https://www.codewars.com/users/fazle'],
-      ['Freecodecamp', 'https://www.freecodecamp.org/fazle'],
-      ['Email', 'mailto:fazlecode@gmail.com']
+      ['Freecodecamp', 'https://www.freecodecamp.org/fazle']
     ],
-    pageSections: ['About', 'Projects', 'Contact']
+    builtByMe: [
+      // [title, logo, link]
+      ['Cithak', '/assets/cithak.svg', 'https://github.com/KucingKode/Cithak']
+    ],
+    pageSections: ['About', 'Projects', 'Find Me']
   }
 })
 

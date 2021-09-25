@@ -13,6 +13,7 @@
   export let projects
   export let pageSections
   export let mediaLinks
+  export let builtByMe
 
   let certificateName, certificateYear, certificateLink
   let lazy = false
@@ -193,14 +194,35 @@
         {#if intersecting}
           <h2
             class="
-              text-center md:text-left text-[8vw] md:text-[3em] lg:text-[4em] mb-9
+              text-center md:text-left text-[8vw] md:text-[3em] lg:text-[4em]
               text-accent font-bold md:ml-20
             "
             
-            in:appear={{duration: 1000, delay: 500}}
-          >My <span class="text-muted">&lt;</span>Projects<span class="text-muted">/&gt;</span></h2>
+            in:appear={{duration: 1000}}
+          >
+            My <span class="text-muted">&lt;</span>Projects<span class="text-muted">/&gt;</span>
+          </h2>
 
-          <div class="py-5 flex flex-wrap justify-center md:justify-start">
+          <div class="
+            md:ml-20 w-full md:w-[80%] flex justify-center md:block
+          "
+            in:appear={{duration: 1000, delay: 500}}
+          >
+            {#each builtByMe as project}
+              <a href={project[2]}>
+                <img
+                  class="
+                    w-14 filter grayscale hover:grayscale-0 transition
+                  "
+                  src={project[1]}
+                  title={project[0]}
+                  alt={project[0]}
+                >
+              </a>
+            {/each}
+          </div>
+
+          <div class="py-5 flex flex-wrap justify-center md:justify-start mt-9">
             {#if lazy}
               {#each projects as project}
                 <a class="text-muted m-2" href={project[1]} target="_blank" rel="noopener">
@@ -208,7 +230,7 @@
                     loading="lazy"
                     class="
                       w-80 h-52 m-1 object-cover border-4 rounded-md
-                      border-muted shadow-lg hover:border-accent
+                      border-muted shadow-lg hover:border-accent transition
                     "
                     src={project[2]}
                     title={project[0]}
@@ -228,7 +250,7 @@
         <svg class="absolute md:left-28 z-[-1] moving" width="606" height="565" viewBox="0 0 606 565" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M520.75 46.2501C576.312 90.0001 607.812 163.5 605.187 230.438C602.562 297.375 565.812 357.75 532.125 405.875C498.437 454.438 467.812 490.313 430.625 517.875C393.437 545.438 349.25 564.25 305.062 564.688C260.875 565.125 216.687 547.188 178.625 520.063C140.562 492.5 109.062 456.188 70.9998 405.875C32.9373 355.563 -11.2502 291.688 2.74985 246.625C16.7498 201.563 89.8123 175.313 150.187 133.313C210.562 90.8751 257.812 33.1251 321.687 10.8126C385.125 -11.0624 464.75 2.50011 520.75 46.2501Z" fill="#FF505A"/>
         </svg>
-        <h3 class="opacity-0" id="contact">Social Media</h3>
+        <h3 class="opacity-0" id="find-me">Let's Find Me</h3>
         {#if intersecting}
           <h1
             
@@ -237,7 +259,7 @@
               leading-[1.1em] drop-shadow-sm text-heading mb-5
             "
             in:appear={{duration: 1000}}
-          >Found Me On</h1>
+          >Find Me On</h1>
           <div class="flex flex-wrap justify-center" >
             {#each mediaLinks as link}
               <a
