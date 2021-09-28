@@ -72,10 +72,16 @@
     "
   >
     <a
-      class="text-accent font-bold text-md md:text-xl"
+      class="h-full py-3"
       href="/"
     >
-      fazle<span class="text-heading">au</span>
+      <img
+        class="
+          h-full object-contain
+        "
+        src="/assets/icon.svg"
+        alt=""
+      />
     </a>
     <div class="ml-auto">
       {#each pageSections as section}
@@ -94,7 +100,7 @@
 
   <!-- Entry Section -->
   <IntersectionObserver let:intersecting once={true}>
-    <div class="w-screen h-screen flex flex-col justify-center items-center px-5">
+    <article class="w-screen h-screen flex flex-col justify-center items-center px-5">
         {#if intersecting}
           <h1
             class="
@@ -110,7 +116,7 @@
             <img class="w-screen h-[35vh]" src="/assets/wave.png" alt="" in:appear={{duration: 500}}/>
           </div>
         {/if}
-      </div>
+      </article>
   </IntersectionObserver>
 
   <!-- About Me Section -->
@@ -119,8 +125,7 @@
     <div class="w-screen py-14">
       {#if intersecting}
       
-      
-      <div class="md:w-[80%] border-l-8 border-muted px-14 mx-auto">
+      <article class="md:w-[80%] border-l-8 border-muted px-14 mx-auto">
           <svg
             class="
               hidden lg:block absolute z-[-1] right-0 moving
@@ -152,7 +157,8 @@
             like <strong>Javascript, Typescript, CSS, HTML</strong>, and
             sometimes using frameworks like <strong>React, Svelte, and Tailwind</strong>.
           </p>
-        </div>
+        </article>
+
       {/if}
     </div>
   </IntersectionObserver>
@@ -189,7 +195,7 @@
 
   <!-- Projects section -->
   <IntersectionObserver let:intersecting once={true}>
-    <div class="w-screen px-10 py-20 border-b-2 border-secondary">
+    <article class="w-screen px-10 py-20 border-b-2 border-secondary">
         <h3 id="projects" class="opacity-0">My Projects</h3>       
         {#if intersecting}
           <h2
@@ -241,7 +247,7 @@
             {/if}
           </div>
         {/if}
-      </div>
+      </article>
   </IntersectionObserver>
 
   <!-- Social Media Section -->

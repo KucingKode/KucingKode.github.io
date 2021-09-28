@@ -110,7 +110,7 @@ const app = new App({
       // [media, link]
       ['Email', 'mailto:fazlecode@gmail.com'],
       ['Github', 'https://github.com/KucingKode'],
-      ['Codepen', 'https://codepen.io/CatKode'],
+      ['Codepen', 'https://codepen.io/KucingKode'],
       ['Codewars', 'https://www.codewars.com/users/fazle'],
       ['Freecodecamp', 'https://www.freecodecamp.org/fazle']
     ],
