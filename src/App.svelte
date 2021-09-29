@@ -113,7 +113,7 @@
             Build Application That Useful For Anyone
           </h1>
           <div class="w-screen h-screen flex flex-col-reverse absolute top-0 z-[-1]">
-            <img class="w-screen h-[35vh]" src="/assets/wave.png" alt="" in:appear={{duration: 500}}/>
+            <img class="w-screen h-[35vh]" src="/assets/wave.png" alt="" loading="lazy" in:appear={{duration: 500}}/>
           </div>
         {/if}
       </article>
